@@ -1,8 +1,16 @@
 package controllers;
 
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import interfaces.ProblemRepository;
 
 import utils.Utils;
@@ -74,5 +82,27 @@ public class ProblemController implements ProblemRepository {
             reversedBuilder.append(data.charAt(i));
         }
         return reversedBuilder.toString();
+    }
+
+    @Override
+    public double calculateInterest(double amount, double monthInterest, String startDateString, String endDateString){
+        
+          // The initial and final date
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate startDate = LocalDate.parse(startDateString, formatter);
+        LocalDate endDate = LocalDate.parse(endDateString, formatter);
+
+        long months = ChronoUnit.MONTHS.between(startDate, endDate);
+        monthInterest = monthInterest / 100;
+
+        // Calculate total interest paid over the loan period
+        double totalInterest = 0.0;
+
+        for (int i = 0; i < months; i++) {
+            totalInterest += amount * monthInterest;
+            amount = amount + amount * monthInterest;
+        }
+
+        return totalInterest;
     }
 }

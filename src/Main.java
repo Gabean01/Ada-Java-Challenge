@@ -19,10 +19,20 @@ public class Main {
         moviesController = new MoviesController();
         problemController = new ProblemController();
 
-        String[] options = {"\n1- Create", "2- Update", "3- Delete", "4- List movies", "5- Secound point solution", "6- Third point solution", "7- Exit\n"};
+        String[] options = {
+            "\n1- Create",
+            "2- Update",
+            "3- Delete",
+            "4- List movies",
+            "5- Secound point solution",
+            "6- Third point solution",
+            "7- Four point solution",
+            "8- Exit\n"
+        };
+
         Scanner scanner = new Scanner(System.in);
         int option = 1;
-        while (option!=7){
+        while (option!=8){
             printMenu(options);
             try {
                 option = scanner.nextInt();
@@ -33,7 +43,8 @@ public class Main {
                     case 4: listMovies(); break;
                     case 5: secondPointSolution(); break;
                     case 6: thirdPointSolution(); break;
-                    case 7: exit(0);
+                    case 7: fourPointSolution(); break;
+                    case 8: exit(0);
                 }
             }
             catch (Exception ex){
@@ -54,12 +65,33 @@ public class Main {
     }
 
     private static void thirdPointSolution() {
-         Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         System.out.println("Enter the text you want to reverse: ");
         String text = in.nextLine();
 
         System.out.printf("\nResult: %s", problemController.reversedString(text));
+    }
+
+    private static void fourPointSolution(){
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the loan money: ");
+        double amount = in.nextDouble();
+
+        System.out.println("Enter the monthly interest rate (%): ");
+        double monthInterestTax = in.nextDouble();
+
+        System.out.println("Enter the start date (dd/MM/yyyy format): ");
+        String startDate = in.next();
+
+        System.out.println("Enter the end date (dd/MM/yyyy format): ");
+        String endDate = in.next();
+
+        double interest = problemController.calculateInterest(amount, monthInterestTax, startDate, endDate);
+        System.out.printf("\nAmount: %s", amount);
+        System.out.printf("\nInterest to pay: %s", interest);
+        System.out.printf("\nTotal to receive: %s \n", (amount + interest));
     }
 
 

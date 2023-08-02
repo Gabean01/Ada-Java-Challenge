@@ -10,4 +10,5 @@ public interface ProblemRepository {
     void setData(); 
 
     String reversedString(String data);
+    double calculateInterest(double amount, double percentaje, String startDate, String endDate);
 }
