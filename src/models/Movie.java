@@ -7,15 +7,17 @@ public class Movie {
     String name;
     String author;
     Date releaseDate;
+    Date createdAt;
     Date updatedAt;
 
     public Movie() {}
 
-    public Movie(String id, String name, String author, Date releaseDate, Date updatedAt) {
+    public Movie(String id, String name, String author, Date releaseDate, Date createdAt, Date updatedAt) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.releaseDate = releaseDate;
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
@@ -63,11 +65,20 @@ public class Movie {
     @Override
     public String toString() {
         return "Movie{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", author=" + author +
+                ", author='" + author + '\'' +
                 ", releaseDate=" + releaseDate +
+                ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
     }
 }
