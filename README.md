@@ -22,10 +22,14 @@ Por favor, asegúrese de tener una versión de Java compatible instalada (Java 1
 
 ## Justificacion
 
-- Validar si la información del diagrama de clases es correcta y completar en caso de ser necesario(Argumentar la respuesta)
+- [Punto #1] Validar si la información del diagrama de clases es correcta y completar en caso de ser necesario(Argumentar la respuesta)
   - Respuesta: El diagrama contiene errores en la declaracion de la key "autor" para el modelo de Pelicula, ademas hacen falta ciertos valores que son basicos en la creacion de un modelo de datos como lo es el ID de la Pelicula, el createdAt y updatedAt con los cuales podemos tener facilidad para verificar fechas de creacion y actualizacion de cada item. Así mismo, con el ID se puede hacer la busqueda de cada pelicula ya que este es unico.
 
-## Funcionalidades
+- [Punto #2] 
+  - Respuesta: Los métodos `findMin()` y `findMax()` buscan el valor mínimo y máximo en la lista data respectivamente, mientras que el método `average()` calcula el promedio de los elementos en la lista utilizando un método de la clase Utils. Asegúrate de que los métodos estén bien implementados y probados para cubrir todos los casos posibles.
+  - 
+- [Punto #3] 
+  - Respuesta: La función `reversedString` utiliza un bucle for que recorre el texto desde el último índice hasta el primero, construyendo la cadena invertida mediante un objeto StringBuilder. Al final, se convierte el StringBuilder a un objeto String y se retorna el text invertido.
 
 - Crear, editar, eliminar y listar peliculas.
 
@@ -80,7 +84,25 @@ Para correr el proyect ejecuta el comando `java Main` en la terminal.
     - Descripción: Al seleccionar esta opción en el menu, podra ver la lista de peliculas agregadas.
     - Resultado:
       - [Movie(), Movie(), ..]
+     
+- **4 - List movies**
+    - Descripción: Al seleccionar esta opción en el menu, podra ver la lista de peliculas agregadas.
+    - Resultado:
+      - [Movie(), Movie(), ..]
 
-
+- **5 - Secound point solution**
+    - Descripción: Aqui se podra ver la solucion al problema de Listas.
+    - Resultado:
+      - El minimo de la lista, el maximo y el promedio.
+     
+- **6 - Third point solution**
+    - Descripción: Aqui se podra invertir un texto.
+    - Resultado:
+      - "esternocleidomastoideo" retorne "oediotsamodielconretse"
+        
+- **7 - Four point solution**
+    - Descripción: Se calcula el interes de un prestamo basado en el dinero, la fecha de inicio, la fecha fin y el interes mensual.
+    - Resultado:
+      - Amount, Interest y Total
 ## Evidencias
-
+Para ver las evidencias por favor ingresar a la carpeta de resources
