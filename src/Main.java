@@ -1,4 +1,5 @@
-import controllers.*;
+import controllers.MoviesController;
+import controllers.ProblemController;
 
 import java.util.Collections;
 import java.util.Date;
@@ -24,7 +25,7 @@ public class Main {
         moviesController = new MoviesController();
         problemController = new ProblemController();
 
-        String[] options = {"\n1- Create", "2- Update", "3- Delete", "4- List movies", "5- Exit\n"};
+        String[] options = {"\n1- Create", "2- Update", "3- Delete", "4- List movies", "5- Secound point solution", "6- Exit\n"};
         Scanner scanner = new Scanner(System.in);
         int option = 1;
         while (option!=6){
@@ -49,9 +50,12 @@ public class Main {
     }
 
     private static void secondPointSolution() {
-        System.out.printf("Min value in array: %s", problemController.findMin());
-        System.out.printf("Max value in array: %s", problemController.findMax());
-        System.out.printf("Average value: %s", problemController.avarage());
+        problemController.setData();
+
+        System.out.printf("\nList: %s", problemController.showData());
+        System.out.printf("\nMin value in array: %s", problemController.findMin());
+        System.out.printf("\nMax value in array: %s", problemController.findMax());
+        System.out.printf("\nAverage value: %s \n", problemController.avarage());
     }
 
 
