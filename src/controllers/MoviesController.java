@@ -5,10 +5,7 @@ import models.Movie;
 import utils.Utils;
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
@@ -61,7 +58,17 @@ public class MoviesController implements MoviesRepository {
 
     @Override
     public boolean delete(String id) {
-        return false;
+        AtomicBoolean isMovieSaved = new AtomicBoolean(false);
+
+        Iterator<Movie> iterator = movies.iterator();
+        while (iterator.hasNext()){
+            Movie movie = iterator.next();
+            if (movie.getId().equals(id)){
+                iterator.remove();
+                isMovieSaved.set(true);
+            }
+        }
+        return isMovieSaved.get();
     }
 
     @Override

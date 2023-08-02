@@ -88,7 +88,17 @@ public class Main {
         }
     }
     private static void deleteMovie(){
-        System.out.println("Thanks for choosing delete");
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the movie id: ");
+        String id = in.nextLine();
+
+        boolean result = controller.delete(id);
+        if (result){
+            System.out.printf("Your movie with ID %s was successfully deleted", id);
+        }else {
+            System.out.println("Your movie was not delete");
+        }
     }
 
     private static void listMovies() {
