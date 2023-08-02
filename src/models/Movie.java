@@ -5,13 +5,13 @@ import java.util.Date;
 public class Movie {
     String id;
     String name;
-    int author;
+    String author;
     Date releaseDate;
     Date updatedAt;
 
     public Movie() {}
 
-    public Movie(String id, String name, int author, Date releaseDate, Date updatedAt) {
+    public Movie(String id, String name, String author, Date releaseDate, Date updatedAt) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -23,7 +23,7 @@ public class Movie {
         this.name = name;
     }
 
-    public void setAuthor(int author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -35,7 +35,7 @@ public class Movie {
         return name;
     }
 
-    public int getAuthor() {
+    public String getAuthor() {
         return author;
     }
 

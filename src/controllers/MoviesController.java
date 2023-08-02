@@ -15,7 +15,7 @@ public class MoviesController implements MoviesRepository {
     private List<Movie> movies = new ArrayList<>();
 
     @Override
-    public boolean create(String name, int author, String releaseDate) {
+    public boolean create(String name, String author, String releaseDate) {
         try {
             Movie movie = new Movie();
             movie.setId(UUID.randomUUID().toString());
@@ -32,7 +32,7 @@ public class MoviesController implements MoviesRepository {
     }
 
     @Override
-    public boolean update(String id, String name, int author, String releaseDate) {
+    public boolean update(String id, String name, String author, String releaseDate) {
         return false;
     }
 
