@@ -67,8 +67,6 @@ public class Main {
         System.out.println("Enter the release date (Format: 25/03/2023): ");
         String releaseDate = in.nextLine();
 
-        in.close();
-
         boolean result = moviesController.create(name, author, releaseDate);
         if (result){
             System.out.printf("Your movie %s was successfully saved", name);
@@ -92,8 +90,6 @@ public class Main {
         System.out.println("Enter the new release date (Format: 25/03/2023): ");
         String releaseDate = in.nextLine();
 
-        in.close();
-
         boolean result = moviesController.update(id, name, author, releaseDate);
         if (result){
             System.out.printf("Your movie %s was successfully updated", name);
@@ -107,7 +103,6 @@ public class Main {
         System.out.println("Enter the movie id: ");
         String id = in.nextLine();
 
-        in.close();
 
         boolean result = moviesController.delete(id);
         if (result){
