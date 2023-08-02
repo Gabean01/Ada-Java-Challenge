@@ -1,15 +1,9 @@
 import controllers.MoviesController;
 import controllers.ProblemController;
-
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.System.exit;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     static MoviesController moviesController;
     static ProblemController problemController;
@@ -73,6 +67,8 @@ public class Main {
         System.out.println("Enter the release date (Format: 25/03/2023): ");
         String releaseDate = in.nextLine();
 
+        in.close();
+
         boolean result = moviesController.create(name, author, releaseDate);
         if (result){
             System.out.printf("Your movie %s was successfully saved", name);
@@ -96,6 +92,8 @@ public class Main {
         System.out.println("Enter the new release date (Format: 25/03/2023): ");
         String releaseDate = in.nextLine();
 
+        in.close();
+
         boolean result = moviesController.update(id, name, author, releaseDate);
         if (result){
             System.out.printf("Your movie %s was successfully updated", name);
@@ -108,6 +106,8 @@ public class Main {
 
         System.out.println("Enter the movie id: ");
         String id = in.nextLine();
+
+        in.close();
 
         boolean result = moviesController.delete(id);
         if (result){
