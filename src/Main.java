@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args){
         controller = new MoviesController();
 
-        String[] options = {"\n1- Create", "2- Update", "3-  Delete", "4- List movies", "5- Exit\n"};
+        String[] options = {"\n1- Create", "2- Update", "3- Delete", "4- List movies", "5- Exit\n"};
         Scanner scanner = new Scanner(System.in);
         int option = 1;
         while (option!=5){
@@ -54,7 +54,7 @@ public class Main {
         System.out.println("Enter the author's name: ");
         String author = in.nextLine();
 
-        System.out.println("Enter the release date: ");
+        System.out.println("Enter the release date (Format: 25/03/2023): ");
         String releaseDate = in.nextLine();
 
         boolean result = controller.create(name, author, releaseDate);
@@ -77,7 +77,7 @@ public class Main {
         System.out.println("Enter the new author's name: ");
         String author = in.nextLine();
 
-        System.out.println("Enter the new release date: ");
+        System.out.println("Enter the new release date (Format: 25/03/2023): ");
         String releaseDate = in.nextLine();
 
         boolean result = controller.update(id, name, author, releaseDate);
