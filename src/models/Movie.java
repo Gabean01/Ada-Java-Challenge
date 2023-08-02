@@ -3,20 +3,21 @@ package models;
 import java.util.Date;
 
 public class Movie {
-    int id;
+    String id;
     String name;
     int author;
     Date releaseDate;
+    Date updatedAt;
 
     public Movie() {}
 
-    public Movie(int id, String name, int author, Date releaseDate) {
+    public Movie(String id, String name, int author, Date releaseDate, Date updatedAt) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.releaseDate = releaseDate;
+        this.updatedAt = updatedAt;
     }
-
 
     public void setName(String name) {
         this.name = name;
@@ -43,12 +44,20 @@ public class Movie {
     }
 
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
     @Override
@@ -58,6 +67,7 @@ public class Movie {
                 ", name='" + name + '\'' +
                 ", author=" + author +
                 ", releaseDate=" + releaseDate +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }
