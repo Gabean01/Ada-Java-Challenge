@@ -19,10 +19,10 @@ public class Main {
         moviesController = new MoviesController();
         problemController = new ProblemController();
 
-        String[] options = {"\n1- Create", "2- Update", "3- Delete", "4- List movies", "5- Secound point solution", "6- Exit\n"};
+        String[] options = {"\n1- Create", "2- Update", "3- Delete", "4- List movies", "5- Secound point solution", "6- Third point solution", "7- Exit\n"};
         Scanner scanner = new Scanner(System.in);
         int option = 1;
-        while (option!=6){
+        while (option!=7){
             printMenu(options);
             try {
                 option = scanner.nextInt();
@@ -32,7 +32,8 @@ public class Main {
                     case 3: deleteMovie(); break;
                     case 4: listMovies(); break;
                     case 5: secondPointSolution(); break;
-                    case 6: exit(0);
+                    case 6: thirdPointSolution(); break;
+                    case 7: exit(0);
                 }
             }
             catch (Exception ex){
@@ -50,6 +51,15 @@ public class Main {
         System.out.printf("\nMin value in array: %s", problemController.findMin());
         System.out.printf("\nMax value in array: %s", problemController.findMax());
         System.out.printf("\nAverage value: %s \n", problemController.avarage());
+    }
+
+    private static void thirdPointSolution() {
+         Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the text you want to reverse: ");
+        String text = in.nextLine();
+
+        System.out.printf("\nResult: %s", problemController.reversedString(text));
     }
 
 

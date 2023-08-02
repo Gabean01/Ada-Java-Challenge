@@ -8,4 +8,6 @@ public interface ProblemRepository {
     double avarage();
     List<Integer> showData(); 
     void setData(); 
+
+    String reversedString(String data);
 }

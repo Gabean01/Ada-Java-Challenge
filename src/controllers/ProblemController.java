@@ -63,4 +63,16 @@ public class ProblemController implements ProblemRepository {
         data.add(2);
         data.add(56);
     }
+
+    @Override
+    public String reversedString(String data){
+        StringBuilder reversedBuilder = new StringBuilder();
+
+        // We traverse the string of characters from right to left
+        for (int i = data.length() - 1; i >= 0; i--) {
+            // Get the character at position i and add it to the StringBuilder
+            reversedBuilder.append(data.charAt(i));
+        }
+        return reversedBuilder.toString();
+    }
 }
